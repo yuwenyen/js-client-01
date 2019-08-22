@@ -1,17 +1,14 @@
-// ここにJavaScriptコードを書く
-const tarea = document.getElementById('tarea');
-const input1 = document.getElementById('input1');
-const input2 = document.getElementById('input2');
+const month = document.getElementById('month');
+const day = document.getElementById('day');
 const btn = document.getElementById('btn');
 const result = document.getElementById('result');
 
 btn.addEventListener('click',()=>{
-    let findtxt = input1.value;
-    let reptxt = input2.value;
-    let tagtxt = tarea.value;
-
-    findtxt = new RegExp(findtxt, 'g');
-    tagtxt = tagtxt.replace(findtxt, reptxt);
-
-    result.innerText = tagtxt;
+    var month = document.getElementById("month").value;
+	var day = document.getElementById("day").value;
+	var zodiac = "山羊水瓶魚座牡羊牡牛双子蟹座獅子乙女天秤蠍座射手山羊";
+		var arr = [20,19,21,21,21,22,23,23,23,23,22,22];
+		var result2 = zodiac.substr(month*2-(day<arr[month-1]?2:0),2);
+        
+        result.innerHTML = result2
 });
